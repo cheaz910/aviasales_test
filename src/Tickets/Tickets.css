@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+.tickets-container
+{
+    display: flex;
+    justify-content: center;
+}
+
 .tickets
 {
     margin-left: 20px;

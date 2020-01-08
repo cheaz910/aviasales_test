@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Transfers from './Transfers/Transfers'
-import Tickets from './Tickets/Tickets'
+import Transfers from './Transfers/Transfers';
+import Tickets from './Tickets/Tickets';
 
 
 const URL = 'https://front-test.beta.aviasales.ru/';
@@ -58,7 +58,7 @@ class App extends React.Component {
         return (
             <div className="wrapper">
                 <div className="logo">
-                    <img src="Logo.svg"/>
+                    <img src="Logo.svg" alt="logo"/>
                 </div>
                 <div className="container">
                     <Transfers onTransferClick={this.onTransferClick} />

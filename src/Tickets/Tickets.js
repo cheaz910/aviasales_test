@@ -1,6 +1,7 @@
 import React from 'react';
 import './Tickets.css';
 import Ticket from '../Ticket/Ticket'
+import Loader from '../Loader/Loader';
 
 class Tickets extends React.Component {
     constructor(props) {
@@ -46,16 +47,16 @@ class Tickets extends React.Component {
             return durationA - durationB;
         });
         return tickets.slice(0, 5);
-
-        return tickets.map((ticket) => {
-            let uniqueKey = ticket.price + ticket.carrier + ticket.segments.length;
-            return <li key={uniqueKey}>
-                <Ticket ticket={ticket} />
-            </li>
-        });
     }
 
     render() {
+        let tickets;
+        if (this.props.tickets.length !== 0) {
+            tickets = <Ticket tickets={this.getBestTickets()} />;
+        } else {
+            tickets = <Loader />
+        }
+
         return (
             <div className="tickets">
                 <div className="options">
@@ -68,8 +69,8 @@ class Tickets extends React.Component {
                         Самый быстрый
                     </label>
                 </div>
-                <div>
-                    <Ticket tickets={this.props.tickets && this.getBestTickets()} />
+                <div className="tickets-container">
+                    {tickets}
                 </div>
             </div>
         );

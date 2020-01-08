@@ -41,7 +41,7 @@ class Ticket extends React.Component {
 
     getSegmentsOfTicket(segments) {
         return segments.map((segment) => (
-           <div className="segment">
+           <div className="segment" key={segment.date}>
                <div className="path">
                    <span className="top-line">{segment.origin} - {segment.destination}</span>
                    <span className="bottom-line">{this.getTimeInterval(segment)}</span>
@@ -59,14 +59,13 @@ class Ticket extends React.Component {
     }
 
     getTickets() {
-        console.log(this.props.tickets);
         return this.props.tickets.map((ticket) => {
             let uniqueKey = ticket.price + ticket.carrier + ticket.segments.length;
             return (
                 <li key={uniqueKey}>
                     <div className="header">
                         <span>{this.getPriceString(ticket.price)}</span>
-                        <img src={`https://pics.avs.io/99/36/${ticket.carrier}.png`}/>
+                        <img src={`https://pics.avs.io/99/36/${ticket.carrier}.png`} alt="logo"/>
                     </div>
                     <div className="segments">
                         {this.getSegmentsOfTicket(ticket.segments)}
