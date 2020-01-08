@@ -20,7 +20,7 @@ class Transfers extends React.Component {
     render() {
         return (
             <div className="transfers">
-                <span>Количество пересадок</span>
+                <span className="title">Количество пересадок</span>
                 <div className="checkbox">
                     <input type="checkbox"
                            id="transfers-all"
@@ -32,7 +32,7 @@ class Transfers extends React.Component {
                     />
                     <label htmlFor="transfers-all"></label>
                     <label className="checkbox-text" htmlFor="transfers-all">
-                        Все
+                        <span>Все</span>
                     </label>
                 </div>
 
@@ -44,7 +44,7 @@ class Transfers extends React.Component {
                     />
                     <label htmlFor="transfers-0"></label>
                     <label className="checkbox-text" htmlFor="transfers-0">
-                        Без пересадок
+                        <span>Без пересадок</span>
                     </label>
                 </div>
 
@@ -56,7 +56,7 @@ class Transfers extends React.Component {
                     />
                     <label htmlFor="transfers-1"></label>
                     <label className="checkbox-text" htmlFor="transfers-1">
-                        1 пересадка
+                        <span>1 пересадка</span>
                     </label>
                 </div>
 
@@ -68,7 +68,7 @@ class Transfers extends React.Component {
                     />
                     <label htmlFor="transfers-2"></label>
                     <label className="checkbox-text" htmlFor="transfers-2">
-                        2 пересадки
+                        <span>2 пересадки</span>
                     </label>
                 </div>
 
@@ -80,7 +80,7 @@ class Transfers extends React.Component {
                     />
                     <label htmlFor="transfers-3"></label>
                     <label className="checkbox-text" htmlFor="transfers-3">
-                        3 пересадки
+                        <span>3 пересадки</span>
                     </label>
                 </div>
             </div>
